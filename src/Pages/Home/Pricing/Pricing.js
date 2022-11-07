@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Pricing = () => {
     return (
@@ -13,7 +14,7 @@ const Pricing = () => {
                             <div className="text-lg md:text-xl mt-[9px] md:mt-[20px]">/mo</div>
                         </div>
                         <div className="px-8 py-1 rounded-3xl font-medium bg-white text-stone-900 hover:bg-gray-100 cursor-pointer">
-                            <a to="">Order Now</a>
+                            <Link to="/">Order Now</Link>
                         </div>
                         <div className="text-white text-sm my-4 border-t border-white flex flex-col justify-center items-center h-60">
                             <div className="m-1">All basic features</div>
@@ -30,7 +31,7 @@ const Pricing = () => {
                             <div className="text-lg md:text-xl mt-[9px] md:mt-[20px]">/mo</div>
                         </div>
                         <div className="px-8 py-1 rounded-3xl font-medium bg-white text-stone-900 hover:bg-gray-100 cursor-pointer">
-                            <a to="">Order Now</a>
+                            <Link to="/">Order Now</Link>
                         </div>
                         <div className="text-white text-sm my-4 border-t border-white flex flex-col justify-center items-center h-60">
                             <div className="m-1">All basic features</div>
@@ -50,7 +51,7 @@ const Pricing = () => {
                             <div className="text-lg md:text-xl mt-[9px] md:mt-[20px]">/mo</div>
                         </div>
                         <div className="px-8 py-1 rounded-3xl font-medium bg-white text-stone-900 hover:bg-gray-100 cursor-pointer">
-                            <a to="">Order Now</a>
+                            <Link to="/">Order Now</Link>
                         </div>
                         <div className="text-white text-sm my-4 border-t border-white flex flex-col justify-center items-center h-60">
                             <div className="m-1">All basic features</div>

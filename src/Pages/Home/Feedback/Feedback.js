@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Feedback = () => {
     return (
@@ -23,8 +24,8 @@ const Feedback = () => {
                                         </div>
                                         <div>
                                             <div className="font-bold text-stone-500 mx-4">John Doe</div>
-                                            <div className="text-sm font-medium text-stone-500 hover:text-stone-500 mx-4"><a
-                                                href="#">Board Director of Tailblocks</a></div>
+                                            <div className="text-sm font-medium text-stone-500 hover:text-stone-500 mx-4"><Link
+                                                href="#">Board Director of Tailblocks</Link></div>
                                         </div>
                                     </div>
                                     <div className="text-stone-400  m-2 px-8"> Tailblocks provides best Tailwind CSS Components and
@@ -48,8 +49,8 @@ const Feedback = () => {
                                         </div>
                                         <div>
                                             <div className="font-bold text-stone-500 mx-4">Elina Gilbert</div>
-                                            <div className="text-sm font-medium text-stone-500 hover:text-stone-500 mx-4"><a
-                                                href="#">ShareHolder, Tailblocks</a></div>
+                                            <div className="text-sm font-medium text-stone-500 hover:text-stone-500 mx-4"><Link
+                                                href="#">ShareHolder, Tailblocks</Link></div>
                                         </div>
                                     </div>
                                     <div className="text-stone-400  m-2 px-8"> Tailblocks provides best Tailwind CSS Components and
@@ -73,8 +74,8 @@ const Feedback = () => {
                                         </div>
                                         <div>
                                             <div className="font-bold text-stone-500 mx-4">Josh Reacher</div>
-                                            <div className="text-sm font-medium text-stone-500 hover:text-stone-500 mx-4"><a
-                                                href="#">CEO, Tailblocks</a></div>
+                                            <div className="text-sm font-medium text-stone-500 hover:text-stone-500 mx-4"><Link
+                                                href="#">CEO, Tailblocks</Link></div>
                                         </div>
                                     </div>
                                     <div className="text-stone-400  m-2 px-8"> Tailblocks provides best Tailwind CSS Components and
