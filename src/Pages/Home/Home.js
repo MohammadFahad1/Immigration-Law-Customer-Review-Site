@@ -1,4 +1,5 @@
 import React from 'react';
+import Contact from './Contact/Contact';
 import Feedback from './Feedback/Feedback';
 import HeroSection from './HeroSection/HeroSection';
 import Pricing from './Pricing/Pricing';
@@ -11,6 +12,7 @@ const Home = () => {
             <Services></Services>
             <Pricing></Pricing>
             <Feedback></Feedback>
+            <Contact></Contact>
         </section>
     );
 };
