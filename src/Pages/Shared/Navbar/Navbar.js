@@ -41,14 +41,14 @@ const Navbar = () => {
                             <>
                                 <button onClick={() => setProfileMenu(!profileMenu)} type="button" className="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
                                     <span className="sr-only">Open user menu</span>
-                                    <img className="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-3.jpg" alt="user" />
+                                    <img className="w-8 h-8 rounded-full" src={user?.photoURL} alt="user" />
                                 </button>
                                 <div className={`${profileMenu ? '' : 'hidden'} z-50 my-4 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600 dropdown-menu-style absolute top-0 left-0`} style={{
                                     transform: 'translate(-134px, 46px)'
                                 }} id="user-dropdown" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom">
                                     <div className="py-3 px-4">
-                                        <span className="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
-                                        <span className="block text-sm font-medium text-gray-500 truncate dark:text-gray-400">name@flowbite.com</span>
+                                        <span className="block text-sm text-gray-900 dark:text-white">{user?.displayName}</span>
+                                        <span className="block text-sm font-medium text-gray-500 truncate dark:text-gray-400">{user?.email}</span>
                                     </div>
                                     <ul className="py-1" aria-labelledby="user-menu-button">
                                         <li>
@@ -61,7 +61,7 @@ const Navbar = () => {
                                             <Link to="/" className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Earnings</Link>
                                         </li>
                                         <li>
-                                            <button onClick={() => logOut().then().catch()} className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</button>
+                                            <button onClick={() => logOut().then().catch()} className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white w-full text-left">Sign out</button>
                                         </li>
                                     </ul>
                                 </div>
