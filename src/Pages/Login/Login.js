@@ -51,90 +51,56 @@ const Login = () => {
     }
 
     return (
-        <div className='bg-slate-400 py-10 pb-40'>
-            <section className="h-screen">
-                <Toaster></Toaster>
-                <div className="px-6 h-full text-gray-800">
-                    <div
-                        className="flex xl:justify-center lg:justify-between justify-center items-center flex-wrap h-full g-6"
-                    >
-                        <div
-                            className="grow-0 shrink-1 md:shrink-0 basis-auto xl:w-6/12 lg:w-6/12 md:w-9/12 mb-12 md:mb-0"
-                        >
-                            <img
-                                src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
-                                className="w-full"
-                                alt="Sample"
-                            />
+        <>
+            <Toaster></Toaster>
+            <div className="flex justify-center">
+                <div className="flex flex-col justify-center items-center md:flex-row shadow rounded-xl max-w-7xl w-[90%] m-2">
+                    <div className="w-full md:w-3/4">
+                        <div className="text-xl flex flex-col justify-center items-center mt-5 md:mt-0 py-4">
+                            <h1 className="font-semibold text-xl md:text-5xl text-gray-600 m-2">Login to your account</h1>
+                            <h1 className="text-sm font-medium text-gray-600 m-2">Login using Social accounts</h1>
+                            <div className="text-lg lg:text-xl text-center space-x-5 m-2">
+                                <button onClick={handleGoogleLogin} className='bg-blue-500 text-white p-2'>
+                                    <FaGooglePlus></FaGooglePlus>
+                                </button>
+                                <button onClick={handleGithubLogin} className='bg-blue-500 text-white p-2'>
+                                    <FaGithub></FaGithub>
+                                </button>
+                            </div>
+                            <h1 className="text-sm font-medium text-gray-600 m-2">OR</h1>
                         </div>
-                        <div className="xl:ml-20 xl:w-5/12 lg:w-5/12 md:w-8/12 mb-12 md:mb-0">
-                            <form onSubmit={loginHandler}>
-                                <div className="flex flex-row items-center justify-center lg:justify-start">
-                                    <p className="text-lg mb-0 mr-4">Sign in with</p>
-                                    <button
-                                        type="button"
-                                        data-mdb-ripple="true"
-                                        data-mdb-ripple-color="light"
-                                        className="btn btn-warning" title="Sign In with Google"
-                                        onClick={() => handleGoogleLogin()}
-                                    >
-                                        <FaGooglePlus className='text-3xl'></FaGooglePlus> <span className='ml-2'>Google</span>
-                                    </button>
-
-                                    <button
-                                        type="button"
-                                        data-mdb-ripple="true"
-                                        data-mdb-ripple-color="light"
-                                        className="btn btn-primary mx-3" title="Sign In with GitHub"
-                                        onClick={() => handleGithubLogin()}
-                                    >
-                                        <FaGithub className='text-3xl'></FaGithub> <span className='ml-2'>GitHub</span>
-                                    </button>
-                                </div>
-
-                                <div
-                                    className="flex items-center my-4 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5"
-                                >
-                                    <p className="text-center font-semibold mx-4 mb-0">Or</p>
-                                </div>
-
-                                <div className="mb-6">
-                                    <input
-                                        type="text"
-                                        className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                                        placeholder="Email address" name='email'
-                                    />
-                                </div>
-
-                                <div className="mb-6">
-                                    <input
-                                        type="password"
-                                        className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                                        placeholder="Password" name='password'
-                                    />
-                                </div>
-
-                                <div className="text-center lg:text-left">
-                                    <button
-                                        type="submit"
-                                        className="inline-block px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
-                                    >
-                                        Login
-                                    </button>
-                                    <p className="text-sm font-semibold mt-2 pt-1 mb-0">
-                                        Don't have an account?
-                                        <Link
-                                            to="/register"
-                                            className="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out"
-                                        >Register</Link>
-                                    </p>
-                                </div>
-                            </form>
+                        <form onSubmit={loginHandler} className="flex flex-col justify-center items-center m-2 space-y-6 md:space-y-8">
+                            <div className="">
+                                <input
+                                    type="text"
+                                    name='email'
+                                    placeholder="User Name"
+                                    className="bg-gray-100 rounded-lg px-5 py-2 focus:border border-blue-600 focus:outline-none text-black placeholder:text-gray-600 placeholder:opacity-50 font-semibold md:w-72 lg:w-[340px]"
+                                />
+                            </div>
+                            <div className="">
+                                <input
+                                    type="password"
+                                    name='password'
+                                    placeholder="Password"
+                                    className="bg-gray-100 rounded-lg px-5 py-2 focus:border border-blue-600 focus:outline-none text-black placeholder:text-gray-600 placeholder:opacity-50 font-semibold md:w-72 lg:w-[340px]"
+                                />
+                            </div>
+                            <div className="text-center mt-7">
+                                <button className="px-24 md:px-[118px] lg:px-[140px] py-2 rounded-md text-white bg-gradient-to-l from-blue-400 to-emerald-400 font-medium m-2 mb-6">Sign In</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div className="h-[100%] w-full md:w-1/3 bg-gradient-to-l from-blue-400 to-emerald-400 items-center flex justify-center">
+                        <div className="text-white text-base font-semibold text-center my-10 space-y-2 m-2">
+                            <h1 className="text-5xl">New Here?</h1>
+                            <h1 className="pb-3">Sign Up and discover new oppurtinities here</h1>
+                            <Link to='/register' className="bg-white rounded-2xl px-4 text-emerald-400 py-1">SignUp</Link>
                         </div>
                     </div>
                 </div>
-            </section>
-        </div>
+            </div>
+        </>
     );
 };
 
