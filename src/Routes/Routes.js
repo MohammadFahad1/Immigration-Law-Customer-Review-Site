@@ -15,7 +15,7 @@ const router = createBrowserRouter([
                 path: '/login', element: <Login></Login>
             },
             {
-                path: '/register', element: <PrivateRoute><h1>Register</h1></PrivateRoute>
+                path: '/register', element: <h1>Register</h1>
             },
             {
                 path: '*', element: <NotFound></NotFound>

@@ -23,3 +23,7 @@ code {
   margin: 0px;
   transform: translate(0px, 134px);
 }
+
+.active {
+  color: rgb(0, 111, 185);
+}
