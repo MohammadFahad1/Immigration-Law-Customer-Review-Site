@@ -4,6 +4,8 @@ import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import NotFound from "../Pages/NotFound/NotFound";
 import Registration from "../Pages/Registration/Registration";
+import ServiceDetails from "../Pages/ServiceDetails/ServiceDetails";
+import Services from "../Pages/Services/Services";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
@@ -17,6 +19,12 @@ const router = createBrowserRouter([
             },
             {
                 path: '/register', element: <Registration></Registration>
+            },
+            {
+                path: '/services', element: <Services></Services>
+            },
+            {
+                path: '/services/:id', element: <ServiceDetails></ServiceDetails>
             },
             {
                 path: '*', element: <NotFound></NotFound>
