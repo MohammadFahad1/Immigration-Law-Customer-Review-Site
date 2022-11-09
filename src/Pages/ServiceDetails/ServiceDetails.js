@@ -18,7 +18,7 @@ const ServiceDetails = () => {
             .then(service => {
                 setService(service);
             })
-    }, [])
+    }, [id])
 
     useEffect(() => {
         fetch(`http://localhost:5000/reviews/${id}`)
@@ -27,7 +27,7 @@ const ServiceDetails = () => {
                 setReviews(review);
                 setLoading(false);
             })
-    }, [])
+    }, [id])
 
     const handleAddReview = event => {
         event.preventDefault();
