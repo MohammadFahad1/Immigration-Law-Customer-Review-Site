@@ -44,7 +44,7 @@ const ServiceDetails = () => {
             displayName: user?.displayName,
             photoURL: user?.photoURL,
             email: user?.email,
-            timestamp: new Date().toString()
+            timestamp: new Date().getTime()
         }
         if (feedback.length > 0) {
             fetch('http://localhost:5000/add-review', {

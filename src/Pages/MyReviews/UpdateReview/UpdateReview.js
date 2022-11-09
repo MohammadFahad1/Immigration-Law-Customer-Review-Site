@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import toast, { Toaster } from 'react-hot-toast';
 import { useParams } from 'react-router-dom';
 
 const UpdateReview = () => {
@@ -7,7 +8,7 @@ const UpdateReview = () => {
     const [review, setReview] = useState({});
     const { id } = useParams();
 
-    const { _id, serviceId, serviceName, serviceImage, displayName, photoURL, email, timestamp } = review;
+    const { serviceName, displayName, photoURL } = review;
 
     useEffect(() => {
         fetch(`http://localhost:5000/get-review/${id}`)
@@ -24,6 +25,24 @@ const UpdateReview = () => {
         setReview(newReview);
     }
 
+    const handleSubmit = event => {
+        event.preventDefault();
+        const form = event.target;
+        fetch(`http://localhost:5000/reviews/${review._id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(review)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount > 0) {
+                    toast.success('Review Updated Successfully!')
+                }
+            })
+    }
+
     if (loading) {
         return <div className='min-h-screen relative bg-yellow-400'>
             <div className="absolute right-1/2 bottom-1/2  transform translate-x-1/2 translate-y-1/2">
@@ -34,9 +53,10 @@ const UpdateReview = () => {
 
     return (
         <div className='my-24 max-w-5xl mx-auto'>
+            <Toaster></Toaster>
             <h2 className='text-4xl font-bold text-center underline text-blue-500'>Update Review</h2>
             <h2 className='text-3xl my-5'><span className='font-bold'>Service Name:</span> {serviceName}</h2>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div className='flex flex-col md:flex-row justify-evenly items-center gap-3'>
                     <img
                         src={photoURL}

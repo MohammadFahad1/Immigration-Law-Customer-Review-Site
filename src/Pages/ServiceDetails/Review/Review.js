@@ -9,7 +9,7 @@ const Review = ({ review }) => {
             </span>
             <div className="p-4 bg-white rounded-lg border border-gray-200 shadow-sm dark:bg-gray-700 dark:border-gray-600">
                 <div className="justify-between items-center mb-3 sm:flex">
-                    <time className="mb-1 text-xs font-normal text-gray-400 sm:order-last sm:mb-0">{timestamp}</time>
+                    <time className="mb-1 text-xs font-normal text-gray-400 sm:order-last sm:mb-0">{new Date(timestamp).toDateString()}, {new Date(timestamp).toLocaleTimeString()}</time>
                     <div className="text-sm font-normal text-gray-500 lex dark:text-gray-300">{displayName} Reviewed</div>
                 </div>
                 <div className="p-3 text-xs italic font-normal text-gray-500 bg-gray-50 rounded-lg border border-gray-200 dark:bg-gray-600 dark:border-gray-500 dark:text-gray-300">{review.review}</div>
