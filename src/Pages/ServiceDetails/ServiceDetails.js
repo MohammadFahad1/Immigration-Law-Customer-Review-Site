@@ -17,14 +17,17 @@ const ServiceDetails = () => {
             .then(res => res.json())
             .then(service => {
                 setService(service);
-                fetch(`http://localhost:5000/reviews/${_id}`)
-                    .then(res => res.json())
-                    .then(review => {
-                        setReviews(review);
-                        setLoading(false);
-                    })
             })
-    }, [service?._id])
+    }, [])
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/reviews/${id}`)
+            .then(res => res.json())
+            .then(review => {
+                setReviews(review);
+                setLoading(false);
+            })
+    }, [])
 
     const handleAddReview = event => {
         event.preventDefault();
@@ -41,25 +44,29 @@ const ServiceDetails = () => {
             email: user?.email,
             timestamp: new Date().toString()
         }
-        fetch('http://localhost:5000/add-service', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        })
-            .then(res => res.json())
-            .then(resData => {
-                if (resData.acknowledged) {
-                    let newData = { ...data };
-                    newData._id = resData.insertedId;
-                    const newReviews = [newData, ...reviews];
-                    console.log(resData);
-                    setReviews(newReviews);
-                    toast.success('Review Added Successfully!');
-                    form.reset();
-                }
+        if (feedback.length > 0) {
+            fetch('http://localhost:5000/add-service', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(data)
             })
+                .then(res => res.json())
+                .then(resData => {
+                    if (resData.acknowledged) {
+                        let newData = { ...data };
+                        newData._id = resData.insertedId;
+                        const newReviews = [newData, ...reviews];
+                        console.log(resData);
+                        setReviews(newReviews);
+                        toast.success('Review Added Successfully!');
+                        form.reset();
+                    }
+                })
+        } else {
+            toast.error('Please write something & try again!');
+        }
     }
 
     if (loading) {
