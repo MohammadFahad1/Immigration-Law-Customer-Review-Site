@@ -34,7 +34,7 @@ const Navbar = () => {
 
 
     return (
-        <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-gray-900 fixed top-0 left-0 w-full">
+        <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-gray-900 w-full">
             <div className="container flex flex-wrap justify-between items-center mx-auto">
                 <Link to="/" className="flex items-center">
                     <img src={logo} className="mr-3 h-10 sm:h-14" alt="Immigration Abroad" />
