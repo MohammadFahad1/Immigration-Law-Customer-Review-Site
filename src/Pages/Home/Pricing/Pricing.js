@@ -1,6 +1,3 @@
-import React from 'react';
-import { toast, Toaster } from 'react-hot-toast';
-
 const Pricing = () => {
     return (
         <div className='my-40 max-w-5xl mx-auto'>

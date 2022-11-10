@@ -27,7 +27,6 @@ const UpdateReview = () => {
 
     const handleSubmit = event => {
         event.preventDefault();
-        const form = event.target;
         fetch(`http://localhost:5000/reviews/${review._id}`, {
             method: 'PUT',
             headers: {
