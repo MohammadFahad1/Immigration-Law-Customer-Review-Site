@@ -5,8 +5,11 @@ import { AuthContext } from '../../contexts/AuthProvider';
 import { FaGooglePlus, FaGithub } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
+import useTitle from '../../Hooks/useTitle';
 
 const Registration = () => {
+
+    useTitle('Registration')
 
     const { createUser, profileUpdate, providerLogin } = useContext(AuthContext);
     const navigate = useNavigate();

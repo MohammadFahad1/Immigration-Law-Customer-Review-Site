@@ -4,8 +4,11 @@ import { AuthContext } from '../../contexts/AuthProvider';
 import { Toaster, toast } from 'react-hot-toast';
 import ServiceReviews from './ServiceReviews/ServiceReviews';
 import { FaStar, FaUserAlt } from "react-icons/fa";
+import useTitle from '../../Hooks/useTitle';
 
 const ServiceDetails = () => {
+
+    useTitle('Service Details')
 
     const [loading, setLoading] = useState(true);
     const [service, setService] = useState({});

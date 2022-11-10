@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider';
+import logo from './../../../assets/logo-icon.png';
 
 const Navbar = () => {
 
@@ -33,11 +34,10 @@ const Navbar = () => {
 
 
     return (
-        <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
+        <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-gray-900 fixed top-0 left-0 w-full">
             <div className="container flex flex-wrap justify-between items-center mx-auto">
-                <Link to="https://flowbite.com/" className="flex items-center">
-                    <img src="https://flowbite.com/docs/images/logo.svg" className="mr-3 h-6 sm:h-9" alt="Flowbite" />
-                    <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+                <Link to="/" className="flex items-center">
+                    <img src={logo} className="mr-3 h-10 sm:h-14" alt="Immigration Abroad" />
                 </Link>
                 <div className="flex items-center md:order-2 relative top-0 left-0">
                     {/* Prfile Dropdown Menu */}
@@ -57,15 +57,12 @@ const Navbar = () => {
                                     </div>
                                     <ul className="py-1" aria-labelledby="user-menu-button">
                                         <li>
-                                            <Link to="/" className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</Link>
+                                            <Link to="/my-reviews" className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">My Reviews</Link>
                                         </li>
                                         <li>
-                                            <Link to="/" className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Settings</Link>
+                                            <Link to="/add-service" className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Add Service</Link>
                                         </li>
-                                        <li>
-                                            <Link to="/" className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Earnings</Link>
-                                        </li>
-                                        <li>
+                                        <li className='bg-red-300 font-bold'>
                                             <button onClick={() => logOut().then().catch()} className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white w-full text-left">Sign out</button>
                                         </li>
                                     </ul>

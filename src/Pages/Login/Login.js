@@ -4,8 +4,10 @@ import { FaGooglePlus, FaGithub } from "react-icons/fa";
 import { AuthContext } from '../../contexts/AuthProvider';
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import { Toaster, toast } from 'react-hot-toast';
+import useTitle from '../../Hooks/useTitle';
 
 const Login = () => {
+    useTitle('Login')
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
     const { providerLogin, signIn } = useContext(AuthContext);
