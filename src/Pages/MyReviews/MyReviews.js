@@ -22,7 +22,7 @@ const MyReviews = () => {
                 setReviews(review);
                 setLoading(false)
             })
-    }, [user.uid])
+    }, [user.uid, user.email])
 
     const handleDelete = review => {
         const agree = window.confirm(`Are you sure about deleting the review!`);
