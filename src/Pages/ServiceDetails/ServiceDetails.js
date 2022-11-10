@@ -18,7 +18,7 @@ const ServiceDetails = () => {
     const { user } = useContext(AuthContext);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/services/${id}`)
+        fetch(`https://immigration-law-server.vercel.app/services/${id}`)
             .then(res => res.json())
             .then(service => {
                 setService(service);
@@ -26,7 +26,7 @@ const ServiceDetails = () => {
     }, [id])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews/${id}`)
+        fetch(`https://immigration-law-server.vercel.app/reviews/${id}`)
             .then(res => res.json())
             .then(review => {
                 setReviews(review);
@@ -50,7 +50,7 @@ const ServiceDetails = () => {
             timestamp: new Date().getTime()
         }
         if (feedback.length > 0) {
-            fetch('http://localhost:5000/add-review', {
+            fetch('https://immigration-law-server.vercel.app/add-review', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

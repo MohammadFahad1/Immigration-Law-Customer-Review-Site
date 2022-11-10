@@ -31,7 +31,7 @@ const AddService = () => {
             author_email: user.email
         }
 
-        fetch('http://localhost:5000/add-service', {
+        fetch('https://immigration-law-server.vercel.app/add-service', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

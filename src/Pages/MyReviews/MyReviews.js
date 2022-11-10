@@ -14,7 +14,7 @@ const MyReviews = () => {
     const { user } = useContext(AuthContext);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myreviews/${user.uid}?email=${user.email}`, {
+        fetch(`https://immigration-law-server.vercel.app/myreviews/${user.uid}?email=${user.email}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('lawFarm-token')}`
             }
@@ -30,7 +30,7 @@ const MyReviews = () => {
     const handleDelete = review => {
         const agree = window.confirm(`Are you sure about deleting the review!`);
         if (agree) {
-            fetch(`http://localhost:5000/delete-review/${review._id}`, {
+            fetch(`https://immigration-law-server.vercel.app/delete-review/${review._id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

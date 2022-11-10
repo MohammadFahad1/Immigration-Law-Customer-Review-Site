@@ -11,7 +11,7 @@ const UpdateReview = () => {
     const { serviceName, displayName, photoURL } = review;
 
     useEffect(() => {
-        fetch(`http://localhost:5000/get-review/${id}`)
+        fetch(`https://immigration-law-server.vercel.app/get-review/${id}`)
             .then(res => res.json())
             .then(data => {
                 setReview(data);
@@ -27,7 +27,7 @@ const UpdateReview = () => {
 
     const handleSubmit = event => {
         event.preventDefault();
-        fetch(`http://localhost:5000/reviews/${review._id}`, {
+        fetch(`https://immigration-law-server.vercel.app/reviews/${review._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
